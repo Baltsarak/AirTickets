@@ -1,7 +1,8 @@
-package com.baltsarak.airtickets
+package com.baltsarak.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.baltsarak.presentation.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
@@ -9,8 +10,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        val viewModel = (application as ProvideViewModel).viewModel()
+//        viewModel.allTicketsLiveData.observe(this) {}
+//        viewModel.musicOffersLiveData.observe(this) {}
+//        viewModel.ticketsOffersLiveData.observe(this) {}
+        viewModel.load()
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnItemSelectedListener(onItemSelectedListener)
