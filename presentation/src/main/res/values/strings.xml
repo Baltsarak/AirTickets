@@ -5,4 +5,15 @@
     <string name="in_short">Короче</string>
     <string name="subscriptions">Подписки</string>
     <string name="profile">Профиль</string>
+    <string name="search_air_tickets">Поиск дешевых авиабилетов</string>
+    <string name="fly_away_musically">Музыкально отлететь</string>
+    <string name="hint_to">Куда - Турция</string>
+    <string name="hint_from">Откуда - Москва</string>
+    <string name="price">от 0 ₽</string>
+    <string name="city">Санкт-Петербург</string>
+    <string name="artist_name">Sample Title</string>
+    <string name="airplane_icon">airplane icon</string>
+    <string name="artist_photo">artist photo</string>
+    <string name="search_icon">search icon</string>
+
 </resources>
