@@ -1,4 +1,4 @@
-package com.baltsarak.presentation
+package com.baltsarak.presentation.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.baltsarak.presentation.databinding.MusicItemBinding

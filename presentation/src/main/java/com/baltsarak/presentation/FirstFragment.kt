@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.baltsarak.presentation.adapter.MusicAdapter
 import com.baltsarak.presentation.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
@@ -24,10 +25,24 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        adapter = MusicAdapter()
-        adapter.submitList(items)
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
-        binding.rvMusic.adapter = adapter
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        adapter = MusicAdapter()
+        adapter.submitList(items)
+        binding.rvMusic.adapter = adapter
+        binding.etTo.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                val bottomSheetFragment = ModalSearchFragment()
+                bottomSheetFragment.show(
+                    requireActivity().supportFragmentManager,
+                    bottomSheetFragment.tag
+                )
+            }
+        }
+    }
 }
+

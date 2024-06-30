@@ -1,8 +1,9 @@
-package com.baltsarak.presentation
+package com.baltsarak.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
+import com.baltsarak.presentation.MusicOffer
 import com.baltsarak.presentation.databinding.MusicItemBinding
 
 class MusicAdapter :

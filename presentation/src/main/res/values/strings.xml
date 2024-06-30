@@ -15,5 +15,16 @@
     <string name="airplane_icon">airplane icon</string>
     <string name="artist_photo">artist photo</string>
     <string name="search_icon">search icon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="handle">handle</string>
+    <string name="hot_tickets">Горячие билеты</string>
+    <string name="weekend">Выходные</string>
+    <string name="anywhere">Куда угодно</string>
+    <string name="difficult_route">Сложный маршрут</string>
+    <string name="istanbul">Стамбул</string>
+    <string name="popular_destination">Популярное направление</string>
+    <string name="sochi">Сочи</string>
+    <string name="phuket">Пхукет</string>
 
 </resources>

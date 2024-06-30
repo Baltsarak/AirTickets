@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_bottom_sheet"
+    tools:context=".ModalSearchFragment">
+
+    <ImageView
+        android:id="@+id/handle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/handle"
+        android:src="@drawable/handle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/search_view"
+        android:layout_width="328dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_corners_background_16"
+        android:backgroundTint="@color/grey3"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/handle">
+
+        <EditText
+            android:id="@+id/et_from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:drawableStart="@drawable/air_plane2"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/sf_pro_display_semibold"
+            android:hint="@string/hint_from"
+            android:inputType="text"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/grey6"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/grey5" />
+
+        <EditText
+            android:id="@+id/et_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:drawableStart="@drawable/search"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/sf_pro_display_semibold"
+            android:hint="@string/hint_to"
+            android:inputType="text"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/grey6"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/iv_difficult_route"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_corners_background_8"
+        android:backgroundTint="@color/green"
+        app:layout_constraintEnd_toStartOf="@id/iv_anywhere"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/route" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_difficult_route"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:gravity="center"
+        android:text="@string/difficult_route"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/iv_difficult_route"
+        app:layout_constraintStart_toStartOf="@id/iv_difficult_route"
+        app:layout_constraintTop_toBottomOf="@id/iv_difficult_route" />
+
+    <FrameLayout
+        android:id="@+id/iv_anywhere"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_corners_background_8"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintBottom_toBottomOf="@id/iv_difficult_route"
+        app:layout_constraintEnd_toStartOf="@id/iv_weekend"
+        app:layout_constraintStart_toEndOf="@id/iv_difficult_route"
+        app:layout_constraintTop_toTopOf="@id/iv_difficult_route">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:backgroundTint="@color/blue"
+            android:src="@drawable/defaultball" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_anywhere"
+        android:layout_width="79dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:gravity="center"
+        android:text="@string/anywhere"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/iv_anywhere"
+        app:layout_constraintStart_toStartOf="@id/iv_anywhere"
+        app:layout_constraintTop_toBottomOf="@id/iv_anywhere" />
+
+    <FrameLayout
+        android:id="@+id/iv_weekend"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_corners_background_8"
+        android:backgroundTint="@color/dark_blue"
+        app:layout_constraintBottom_toBottomOf="@id/iv_anywhere"
+        app:layout_constraintEnd_toStartOf="@id/iv_hot_tickets"
+        app:layout_constraintStart_toEndOf="@id/iv_anywhere"
+        app:layout_constraintTop_toTopOf="@id/iv_anywhere">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/calendar" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_weekend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:gravity="center"
+        android:text="@string/weekend"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/iv_weekend"
+        app:layout_constraintStart_toStartOf="@id/iv_weekend"
+        app:layout_constraintTop_toBottomOf="@id/iv_weekend" />
+
+    <FrameLayout
+        android:id="@+id/iv_hot_tickets"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_corners_background_8"
+        android:backgroundTint="@color/orange"
+        app:layout_constraintBottom_toBottomOf="@id/iv_weekend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_weekend"
+        app:layout_constraintTop_toTopOf="@id/iv_weekend">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/flame" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_hot_tickets"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:gravity="center"
+        android:text="@string/hot_tickets"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/iv_hot_tickets"
+        app:layout_constraintStart_toStartOf="@id/iv_hot_tickets"
+        app:layout_constraintTop_toBottomOf="@id/iv_hot_tickets" />
+
+    <LinearLayout
+        android:layout_width="328dp"
+        android:layout_height="216dp"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/rounded_corners_background_16"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view">
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/istanbul"
+                app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_semibold"
+                    android:text="@string/istanbul"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@string/popular_destination"
+                    android:textColor="@color/grey5"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/grey5" />
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sochi"
+                app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_semibold"
+                    android:text="@string/sochi"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@string/popular_destination"
+                    android:textColor="@color/grey5"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/grey5" />
+
+        <LinearLayout
+            android:layout_width="296dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/phuket"
+                app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_semibold"
+                    android:text="@string/phuket"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@string/popular_destination"
+                    android:textColor="@color/grey5"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/grey5" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
