@@ -26,5 +26,15 @@
     <string name="popular_destination">Популярное направление</string>
     <string name="sochi">Сочи</string>
     <string name="phuket">Пхукет</string>
+    <string name="back">обратно</string>
+    <string name="ticket_type">1,эконом</string>
+    <string name="filters">фильтры</string>
+    <string name="ural_airlines">Уральские авиалинии</string>
+    <string name="ticket_price">2 390 ₽</string>
+    <string name="flight_times">07:00 09:10 10:00 11:00</string>
+    <string name="direct_flights">Прямые рейсы</string>
+    <string name="pobeda">Победа</string>
+    <string name="nordstar">NordStar</string>
+    <string name="view_all_tickets">Посмотреть все билеты</string>
 
 </resources>

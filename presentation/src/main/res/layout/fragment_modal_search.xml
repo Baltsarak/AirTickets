@@ -20,9 +20,11 @@
 
     <LinearLayout
         android:id="@+id/search_view"
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="96dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corners_background_16"
         android:backgroundTint="@color/grey3"
         android:gravity="center"
@@ -58,23 +60,39 @@
             android:layout_marginEnd="16dp"
             android:background="@color/grey5" />
 
-        <EditText
-            android:id="@+id/et_to"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@null"
-            android:drawableStart="@drawable/search"
-            android:drawablePadding="12dp"
-            android:drawableTint="@color/white"
-            android:fontFamily="@font/sf_pro_display_semibold"
-            android:hint="@string/hint_to"
-            android:inputType="text"
-            android:textColor="@android:color/white"
-            android:textColorHint="@color/grey6"
-            android:textSize="16sp" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableStart="@drawable/search"
+                android:drawablePadding="12dp"
+                android:drawableTint="@color/white"
+                android:fontFamily="@font/sf_pro_display_semibold"
+                android:hint="@string/hint_to"
+                android:inputType="text"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/grey6"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="18dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/close"
+                app:tint="@color/grey6" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -82,11 +100,12 @@
         android:id="@+id/iv_difficult_route"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginStart="27dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_corners_background_8"
         android:backgroundTint="@color/green"
         app:layout_constraintEnd_toStartOf="@id/iv_anywhere"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_view">
 
@@ -184,6 +203,7 @@
         android:id="@+id/iv_hot_tickets"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="27dp"
         android:background="@drawable/rounded_corners_background_8"
         android:backgroundTint="@color/orange"
         app:layout_constraintBottom_toBottomOf="@id/iv_weekend"
@@ -214,9 +234,11 @@
         app:layout_constraintTop_toBottomOf="@id/iv_hot_tickets" />
 
     <LinearLayout
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="216dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="144dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corners_background_16"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
