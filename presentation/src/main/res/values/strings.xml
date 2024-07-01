@@ -9,7 +9,7 @@
     <string name="fly_away_musically">Музыкально отлететь</string>
     <string name="hint_to">Куда - Турция</string>
     <string name="hint_from">Откуда - Москва</string>
-    <string name="price">от 0 ₽</string>
+    <string name="price_from">от 0 ₽</string>
     <string name="city">Санкт-Петербург</string>
     <string name="artist_name">Sample Title</string>
     <string name="airplane_icon">airplane icon</string>
@@ -36,5 +36,19 @@
     <string name="pobeda">Победа</string>
     <string name="nordstar">NordStar</string>
     <string name="view_all_tickets">Посмотреть все билеты</string>
+    <string name="bottom_back">bottom back</string>
+    <string name="from_to">Москва-Сочи</string>
+    <string name="search_data">23 февраля, 1 пассажир</string>
+    <string name="date">24 июн, сб</string>
+    <string name="filter">Фильтр</string>
+    <string name="price_chart">График цен</string>
+    <string name="badge_text">Самый удобный</string>
+    <string name="aer">AER</string>
+    <string name="vko">VKO</string>
+    <string name="transfers_info">/ Без пересадок</string>
+    <string name="travel_time">4ч в пути</string>
+    <string name="_07_10">07:10</string>
+    <string name="slash">—</string>
+    <string name="_03_15">03:15</string>
 
 </resources>

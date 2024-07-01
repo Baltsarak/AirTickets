@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="117dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corners_background_8"
+            android:backgroundTint="@color/grey1"
+            app:cardCornerRadius="8dp">
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/sf_pro_display_semibold"
+                android:text="@string/ticket_price"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/red"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price" />
+
+            <TextView
+                android:id="@+id/departure_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/_03_15"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/icon"
+                app:layout_constraintTop_toBottomOf="@id/price"/>
+
+            <TextView
+                android:id="@+id/slash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/slash"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:textColor="@color/grey6"
+                android:textStyle="italic"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/departure_time"
+                app:layout_constraintTop_toTopOf="@id/departure_time"
+                app:layout_constraintBottom_toBottomOf="@id/departure_time"/>
+
+            <TextView
+                android:id="@+id/arrival_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/_07_10"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/slash"
+                app:layout_constraintTop_toTopOf="@id/slash"
+                app:layout_constraintBottom_toBottomOf="@id/slash"/>
+
+            <TextView
+                android:id="@+id/travel_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/travel_time"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/arrival_time"
+                app:layout_constraintTop_toTopOf="@id/arrival_time"
+                app:layout_constraintBottom_toBottomOf="@id/arrival_time"/>
+
+            <TextView
+                android:id="@+id/transfers_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/transfers_info"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/travel_time"
+                app:layout_constraintTop_toTopOf="@id/travel_time"
+                app:layout_constraintBottom_toBottomOf="@id/travel_time"/>
+
+            <TextView
+                android:id="@+id/departure_airport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vko"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:textStyle="italic"
+                android:textColor="@color/grey6"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/departure_time"
+                app:layout_constraintTop_toBottomOf="@id/departure_time"/>
+
+            <TextView
+                android:id="@+id/arrival_airport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aer"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:textStyle="italic"
+                android:textColor="@color/grey6"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/arrival_time"
+                app:layout_constraintTop_toBottomOf="@id/arrival_time"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/badge"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_gravity="top|start"
+        android:background="@drawable/small_button"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:text="@string/badge_text"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:textStyle="italic" />
+
+</FrameLayout>
+

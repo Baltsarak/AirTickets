@@ -146,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/sf_pro_display_medium"
-                    android:text="24 июн, сб"
+                    android:text="@string/date"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="italic" />
