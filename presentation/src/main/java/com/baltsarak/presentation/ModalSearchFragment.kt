@@ -1,6 +1,8 @@
 package com.baltsarak.presentation
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +29,21 @@ class ModalSearchFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         settingBottomSheetHeight(view)
 
+        binding.etTo.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if (!s.isNullOrEmpty()) {
+                    requireActivity().supportFragmentManager
+                        .beginTransaction()
+                        .addToBackStack(null)
+                        .replace(R.id.main_screen_fragment_container, FlightSelectionFragment())
+                        .commit()
 
+                    dismiss()
+                }
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
     }
 
     private fun settingBottomSheetHeight(view: View) {

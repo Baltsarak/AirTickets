@@ -20,4 +20,15 @@ class FlightSelectionFragment : Fragment() {
         _binding = FragmentFlightSelectionBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.buttonViewAllTickets.setOnClickListener {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.main_screen_fragment_container, AllTicketsFragment())
+                .commit()
+        }
+    }
 }

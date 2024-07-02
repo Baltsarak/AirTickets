@@ -7,4 +7,8 @@ interface TicketRepository {
     suspend fun getTicketsOffers()
 
     suspend fun getAllTickets()
+
+    suspend fun saveTextInCache(text: String)
+
+    suspend fun getTextFromCache(): String
 }

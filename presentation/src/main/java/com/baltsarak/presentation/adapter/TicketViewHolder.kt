@@ -1,8 +1,8 @@
 package com.baltsarak.presentation.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import com.baltsarak.presentation.databinding.MusicCardBinding
+import com.baltsarak.presentation.databinding.TicketCardBinding
 
-class MusicViewHolder(
-    val binding: MusicCardBinding
+class TicketViewHolder(
+    val binding: TicketCardBinding
 ) : RecyclerView.ViewHolder(binding.root)

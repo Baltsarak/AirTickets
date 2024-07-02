@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -44,9 +45,16 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.recyclerview:recyclerview:1.3.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    implementation("com.google.dagger:dagger:2.51.1")
+    implementation("com.google.dagger:dagger-android:2.35")
+    implementation("com.google.dagger:dagger-android-support:2.35")
+    kapt("com.google.dagger:dagger-compiler:2.51.1")
+    kapt("com.google.dagger:dagger-android-processor:2.35")
+
     testImplementation("junit:junit:4.13.2")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
 }

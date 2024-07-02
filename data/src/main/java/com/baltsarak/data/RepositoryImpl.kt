@@ -1,20 +1,12 @@
 package com.baltsarak.data
 
 import com.baltsarak.domain.TicketRepository
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class TicketRepositoryImpl(
-    private val service: ApiService
+class TicketRepositoryImpl @Inject constructor(
+    private val service: ApiService,
+    private val preferenceHelper: PreferenceHelper
 ) : TicketRepository {
-
-    constructor() : this(
-        Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://run.mocky.io/v3/")
-            .build()
-            .create(ApiService::class.java)
-    )
 
     override suspend fun getMusicOffers() {
         TODO("Not yet implemented")
@@ -26,5 +18,13 @@ class TicketRepositoryImpl(
 
     override suspend fun getAllTickets() {
         TODO("Not yet implemented")
+    }
+
+    override suspend fun saveTextInCache(text: String) {
+        preferenceHelper.saveText(text)
+    }
+
+    override suspend fun getTextFromCache(): String {
+        return preferenceHelper.loadText() ?: ""
     }
 }

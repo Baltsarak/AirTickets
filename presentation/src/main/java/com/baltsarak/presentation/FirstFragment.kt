@@ -17,8 +17,8 @@ class FirstFragment : Fragment() {
         get() = _binding ?: throw RuntimeException("FragmentFirstBinding is null")
 
     private val items = listOf(
-        MusicOffer(R.drawable.flame, "Die Antwoord", "Будапешт", "от 22 264 ₽"),
-        MusicOffer(R.drawable.defaultball, "Socrat & Lera", "Санкт-Петербург", "от 2 390 ₽")
+        MusicOffer(R.drawable.sochi, "Die Antwoord", "Будапешт", "от 22 264 ₽"),
+        MusicOffer(R.drawable.phuket, "Socrat & Lera", "Санкт-Петербург", "от 2 390 ₽")
     )
 
     override fun onCreateView(

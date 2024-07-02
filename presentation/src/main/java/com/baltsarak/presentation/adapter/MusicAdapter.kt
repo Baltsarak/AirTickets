@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.baltsarak.presentation.MusicOffer
-import com.baltsarak.presentation.databinding.MusicItemBinding
+import com.baltsarak.presentation.databinding.MusicCardBinding
 
 class MusicAdapter :
     ListAdapter<MusicOffer, MusicViewHolder>(MusicDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicViewHolder {
-        val binding = MusicItemBinding.inflate(
+        val binding = MusicCardBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
