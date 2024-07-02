@@ -15,6 +15,7 @@ class Mapper @Inject constructor() {
 
     fun mapMusicOffer(musicDto: MusicOfferDto): MusicOffer {
         return MusicOffer(
+            id = musicDto.id,
             title = musicDto.title,
             town = musicDto.town,
             price = musicDto.price.value

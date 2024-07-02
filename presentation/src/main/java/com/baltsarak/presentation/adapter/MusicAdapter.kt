@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.baltsarak.domain.entities.MusicOffer
+import com.baltsarak.presentation.R
 import com.baltsarak.presentation.databinding.MusicCardBinding
 
 class MusicAdapter :
@@ -21,9 +22,14 @@ class MusicAdapter :
     override fun onBindViewHolder(holder: MusicViewHolder, position: Int) {
         val offer = getItem(position)
         with(holder.binding) {
-            title.text = offer.name
-            city.text = offer.city
-            price.text = offer.price
+            when (offer.id) {
+                1 -> artistImage.setImageResource(R.drawable.artist1)
+                2 -> artistImage.setImageResource(R.drawable.artist2)
+                3 -> artistImage.setImageResource(R.drawable.artist3)
+            }
+            title.text = offer.title
+            city.text = offer.town
+            price.text = offer.price.toString()
         }
     }
 }

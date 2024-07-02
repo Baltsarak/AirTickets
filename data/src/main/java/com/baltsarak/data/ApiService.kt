@@ -7,12 +7,12 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("https://drive.usercontent.google.com/u/0/uc?id=1o1nX3uFISrG1gR-jr_03Qlu4_KEZWhav&export=download")
+    @GET("u/0/uc?id=1o1nX3uFISrG1gR-jr_03Qlu4_KEZWhav&export=download")
     suspend fun getMusicOffers(): MusicOfferListDto
 
-    @GET("https://drive.usercontent.google.com/u/0/uc?id=13WhZ5ahHBwMiHRXxWPq-bYlRVRwAujta&export=download")
+    @GET("u/0/uc?id=13WhZ5ahHBwMiHRXxWPq-bYlRVRwAujta&export=download")
     suspend fun getTicketsOffers(): TicketOfferListDto
 
-    @GET("https://drive.google.com/uc?export=download&id=1HogOsz4hWkRwco4kud3isZHFQLUAwNBA")
+    @GET("uc?export=download&id=1HogOsz4hWkRwco4kud3isZHFQLUAwNBA")
     suspend fun getAllTickets(): TicketListDto
 }

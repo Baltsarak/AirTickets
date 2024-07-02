@@ -5,9 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.baltsarak.domain.entities.MusicOffer
+import androidx.lifecycle.Observer
 import com.baltsarak.presentation.adapter.MusicAdapter
 import com.baltsarak.presentation.databinding.FragmentFirstBinding
+import com.baltsarak.presentation.di.ViewModelFactory
+import com.baltsarak.presentation.viewModels.FirstScreenViewModel
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 class FirstFragment : Fragment() {
 
@@ -17,10 +21,16 @@ class FirstFragment : Fragment() {
     private val binding: FragmentFirstBinding
         get() = _binding ?: throw RuntimeException("FragmentFirstBinding is null")
 
-    private val items = listOf(
-        MusicOffer(R.drawable.sochi, "Die Antwoord", "Будапешт", "от 22 264 ₽"),
-        MusicOffer(R.drawable.phuket, "Socrat & Lera", "Санкт-Петербург", "от 2 390 ₽")
-    )
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private lateinit var viewModel: FirstScreenViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidSupportInjection.inject(this)
+        super.onCreate(savedInstanceState)
+        viewModel = viewModelFactory.create(FirstScreenViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +43,12 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = MusicAdapter()
-        adapter.submitList(items)
+        binding.rvMusic.adapter = adapter
+
+        viewModel.musicOffersLiveData.observe(viewLifecycleOwner, Observer { items ->
+            adapter.submitList(items)
+        })
+
         binding.rvMusic.adapter = adapter
         binding.etTo.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {

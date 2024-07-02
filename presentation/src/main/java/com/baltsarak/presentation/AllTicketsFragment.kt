@@ -5,9 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.baltsarak.domain.entities.Ticket
+import androidx.lifecycle.Observer
 import com.baltsarak.presentation.adapter.TicketAdapter
 import com.baltsarak.presentation.databinding.FragmentAllTicketsBinding
+import com.baltsarak.presentation.di.ViewModelFactory
+import com.baltsarak.presentation.viewModels.AllTicketsViewModel
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 class AllTicketsFragment : Fragment() {
 
@@ -17,11 +21,16 @@ class AllTicketsFragment : Fragment() {
     private val binding: FragmentAllTicketsBinding
         get() = _binding ?: throw RuntimeException("FragmentAllTicketsBinding is null")
 
-    private val items = listOf(
-        Ticket(1, "Прилет вечером", 6460, 70000909, 70002009, "DME", "AER", false),
-        Ticket(2, null, 6733, 70000909, 70002009, "DME", "AER", true),
-        Ticket(3, null, 8540, 70000909, 70002009, "DME", "AER", false)
-    )
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private lateinit var viewModel: AllTicketsViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidSupportInjection.inject(this)
+        super.onCreate(savedInstanceState)
+        viewModel = viewModelFactory.create(AllTicketsViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +42,12 @@ class AllTicketsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val items = viewModel.allTicketsLiveData.value
         adapter = TicketAdapter()
-        adapter.submitList(items)
         binding.rvAllTicketsList.adapter = adapter
+
+        viewModel.allTicketsLiveData.observe(viewLifecycleOwner, Observer { items ->
+            adapter.submitList(items)
+        })
     }
 }

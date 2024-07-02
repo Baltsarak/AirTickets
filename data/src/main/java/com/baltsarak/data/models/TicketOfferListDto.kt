@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class TicketOfferListDto(
-    @SerializedName("offers")
+    @SerializedName("tickets_offers")
     @Expose
     val ticketList: List<TicketOfferDto>
 )

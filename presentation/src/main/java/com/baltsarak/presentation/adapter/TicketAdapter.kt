@@ -29,9 +29,9 @@ class TicketAdapter :
                 badge.text = ticket.badge
             }
             price.text = ticket.price.toString()
-            departureTime.text = ticket.departureDate.toString()
-            arrivalTime.text = ticket.arrivalDate.toString()
-            travelTime.text = (ticket.arrivalDate - ticket.departureDate).toString()
+            departureTime.text = ticket.departureTime
+            arrivalTime.text = ticket.arrivalTime
+            travelTime.text = ticket.duration
             departureAirport.text = ticket.departureAirport
             arrivalAirport.text = ticket.arrivalAirport
             if(!ticket.hasTransfer) {

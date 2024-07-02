@@ -3,7 +3,7 @@ package com.baltsarak.airtickets.di
 import com.baltsarak.airtickets.AirTicketsApp
 import com.baltsarak.data.di.DataModule
 import com.baltsarak.data.di.NetworkModule
-import com.baltsarak.presentation.di.ActivityModule
+import com.baltsarak.presentation.di.FragmentModule
 import com.baltsarak.presentation.di.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
@@ -21,7 +21,7 @@ import javax.inject.Singleton
         DataModule::class,
         NetworkModule::class,
         ViewModelModule::class,
-        ActivityModule::class]
+        FragmentModule::class]
 )
 interface AppComponent : AndroidInjector<AirTicketsApp> {
 
