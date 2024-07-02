@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.baltsarak.domain.entities.MusicOffer
 import com.baltsarak.presentation.adapter.MusicAdapter
 import com.baltsarak.presentation.databinding.FragmentFirstBinding
 

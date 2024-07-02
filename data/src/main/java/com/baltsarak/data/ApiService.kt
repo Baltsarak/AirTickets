@@ -1,15 +1,18 @@
 package com.baltsarak.data
 
+import com.baltsarak.data.models.MusicOfferListDto
+import com.baltsarak.data.models.TicketListDto
+import com.baltsarak.data.models.TicketOfferListDto
 import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("ad9a46ba-276c-4a81-88a6-c068e51cce3a")
-    suspend fun getMusicOffers()
+    @GET("https://drive.usercontent.google.com/u/0/uc?id=1o1nX3uFISrG1gR-jr_03Qlu4_KEZWhav&export=download")
+    suspend fun getMusicOffers(): MusicOfferListDto
 
-    @GET("38b5205d-1a3d-4c2f-9d77-2f9d1ef01a4a")
-    suspend fun getTicketsOffers()
+    @GET("https://drive.usercontent.google.com/u/0/uc?id=13WhZ5ahHBwMiHRXxWPq-bYlRVRwAujta&export=download")
+    suspend fun getTicketsOffers(): TicketOfferListDto
 
-    @GET("c0464573-5a13-45c9-89f8-717436748b69")
-    suspend fun getAllTickets()
+    @GET("https://drive.google.com/uc?export=download&id=1HogOsz4hWkRwco4kud3isZHFQLUAwNBA")
+    suspend fun getAllTickets(): TicketListDto
 }

@@ -5,6 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.baltsarak.domain.TicketRepository
+import com.baltsarak.domain.entities.MusicOffer
+import com.baltsarak.domain.entities.Ticket
+import com.baltsarak.domain.entities.TicketOffer
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -12,14 +15,14 @@ class MainViewModel @Inject constructor(
     private val repository : TicketRepository
 ) : ViewModel() {
 
-    private val _musicOffersLiveData = MutableLiveData<Unit>()
-    val musicOffersLiveData: LiveData<Unit> = _musicOffersLiveData
+    private val _musicOffersLiveData = MutableLiveData<List<MusicOffer>>()
+    val musicOffersLiveData: LiveData<List<MusicOffer>> = _musicOffersLiveData
 
-    private val _ticketsOffersLiveData = MutableLiveData<Unit>()
-    val ticketsOffersLiveData: LiveData<Unit> = _ticketsOffersLiveData
+    private val _ticketsOffersLiveData = MutableLiveData<List<TicketOffer>>()
+    val ticketsOffersLiveData: LiveData<List<TicketOffer>> = _ticketsOffersLiveData
 
-    private val _allTicketsLiveData = MutableLiveData<Unit>()
-    val allTicketsLiveData: LiveData<Unit> = _allTicketsLiveData
+    private val _allTicketsLiveData = MutableLiveData<List<Ticket>>()
+    val allTicketsLiveData: LiveData<List<Ticket>> = _allTicketsLiveData
 
     fun load() {
         viewModelScope.launch {

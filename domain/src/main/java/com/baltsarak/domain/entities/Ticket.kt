@@ -1,11 +1,12 @@
-package com.baltsarak.presentation
+package com.baltsarak.domain.entities
 
 data class Ticket(
     val id: Int,
     val badge: String?,
     val price: Int,
-    val departureDate: Int,
-    val arrivalDate: Int,
+    val departureTime: String,
+    val arrivalTime: String,
+    val duration: String,
     val departureAirport: String,
     val arrivalAirport: String,
     val hasTransfer: Boolean

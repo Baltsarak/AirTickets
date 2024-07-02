@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.baltsarak.presentation.Ticket
+import com.baltsarak.domain.entities.Ticket
 import com.baltsarak.presentation.databinding.TicketCardBinding
 
 class TicketAdapter :

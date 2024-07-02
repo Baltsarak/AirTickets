@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.baltsarak.domain.entities.Ticket
 import com.baltsarak.presentation.adapter.TicketAdapter
 import com.baltsarak.presentation.databinding.FragmentAllTicketsBinding
 
