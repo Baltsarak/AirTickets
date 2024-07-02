@@ -79,6 +79,7 @@
                 android:drawableTint="@color/white"
                 android:fontFamily="@font/sf_pro_display_semibold"
                 android:hint="@string/hint_to"
+                android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:textColor="@android:color/white"
                 android:textColorHint="@color/grey6"

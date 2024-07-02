@@ -9,7 +9,10 @@ import com.baltsarak.domain.entities.TicketOffer
 import org.threeten.bp.Duration
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
+import java.text.NumberFormat
+import java.util.Locale
 import javax.inject.Inject
+import kotlin.math.round
 
 class Mapper @Inject constructor() {
 
@@ -18,7 +21,7 @@ class Mapper @Inject constructor() {
             id = musicDto.id,
             title = musicDto.title,
             town = musicDto.town,
-            price = musicDto.price.value
+            price = " от " + formatPrice(musicDto.price.value)
         )
     }
 
@@ -27,7 +30,7 @@ class Mapper @Inject constructor() {
             id = ticketDto.id,
             title = ticketDto.title,
             timeRange = ticketDto.timeRange.joinToString(separator = " "),
-            price = ticketDto.price.value
+            price = formatPrice(ticketDto.price.value)
         )
     }
 
@@ -35,7 +38,7 @@ class Mapper @Inject constructor() {
         return Ticket(
             id = ticketDto.id,
             badge = ticketDto.badge,
-            price = ticketDto.price.value,
+            price = formatPrice(ticketDto.price.value),
             departureTime = formatedTime(ticketDto.departure.date),
             arrivalTime = formatedTime(ticketDto.arrival.date),
             duration = calculateHoursDifference(ticketDto.departure.date, ticketDto.arrival.date),
@@ -56,7 +59,21 @@ class Mapper @Inject constructor() {
         val start = LocalDateTime.parse(startDateTime, formatter)
         val end = LocalDateTime.parse(endDateTime, formatter)
         val duration = Duration.between(start, end)
-        return duration.toHours().toString()
+
+        val hours = duration.toHours()
+        val minutes = duration.toMinutes() % 60
+        val fractionalHours = minutes / 60.0
+        val totalHours = hours + fractionalHours
+        val roundedTotalHours = round(totalHours * 2) / 2
+
+        return String.format(Locale("ru", "RU"), "%.1fч в пути", roundedTotalHours)
+    }
+
+    private fun formatPrice(price: Int): String {
+        val numberFormat = NumberFormat.getNumberInstance(Locale("ru", "RU"))
+        val formattedPrice = numberFormat.format(price)
+
+        return "$formattedPrice ₽"
     }
 }
 

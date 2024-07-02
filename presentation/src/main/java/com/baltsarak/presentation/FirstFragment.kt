@@ -45,13 +45,22 @@ class FirstFragment : Fragment() {
         adapter = MusicAdapter()
         binding.rvMusic.adapter = adapter
 
+        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.music_item_spacing)
+        binding.rvMusic.addItemDecoration(MusicItemDecoration(spacingInPixels))
+
         viewModel.musicOffersLiveData.observe(viewLifecycleOwner, Observer { items ->
             adapter.submitList(items)
+        })
+
+        viewModel.getTextFromCache().observe(viewLifecycleOwner, Observer { cachedText ->
+            binding.etFrom.setText(cachedText)
         })
 
         binding.rvMusic.adapter = adapter
         binding.etTo.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
+                val from = binding.etFrom.text.toString()
+                viewModel.saveTextInCache(from)
                 val bottomSheetFragment = ModalSearchFragment()
                 bottomSheetFragment.show(
                     requireActivity().supportFragmentManager,
@@ -59,6 +68,9 @@ class FirstFragment : Fragment() {
                 )
             }
         }
+
+        binding.etFrom.filters = arrayOf(CyrillicInputFilter())
+        binding.etTo.filters = arrayOf(CyrillicInputFilter())
     }
 }
 

@@ -1,6 +1,5 @@
 package com.baltsarak.presentation.viewModels
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,7 +19,6 @@ class FlightSelectionViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val ticketOffers = repository.getTicketsOffers()
-            Log.d("FlightSelectionViewModel", ticketOffers.toString())
             _ticketsOffersLiveData.value = ticketOffers
         }
     }

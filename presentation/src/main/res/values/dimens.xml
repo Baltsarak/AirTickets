@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="bottom_sheet_height">744dp</dimen>
+    <dimen name="music_item_spacing">67dp</dimen>
+    <dimen name="ticket_item_spacing">16dp</dimen>
 </resources>

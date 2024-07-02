@@ -22,4 +22,19 @@ class FirstScreenViewModel @Inject constructor(
             _musicOffersLiveData.value = musicOffers
         }
     }
+
+    fun saveTextInCache(text: String) {
+        viewModelScope.launch {
+            repository.saveTextInCache(text)
+        }
+    }
+
+    fun getTextFromCache(): LiveData<String> {
+        val cachedTextLiveData = MutableLiveData<String>()
+        viewModelScope.launch {
+            val text = repository.getTextFromCache()
+            cachedTextLiveData.postValue(text)
+        }
+        return cachedTextLiveData
+    }
 }

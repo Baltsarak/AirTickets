@@ -38,7 +38,10 @@ class FlightSelectionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val items = viewModel.ticketsOffersLiveData.value
+
+        binding.etFrom.filters = arrayOf(CyrillicInputFilter())
+        binding.etTo.filters = arrayOf(CyrillicInputFilter())
+
         binding.buttonViewAllTickets.setOnClickListener {
             requireActivity().supportFragmentManager
                 .beginTransaction()

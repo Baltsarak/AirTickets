@@ -28,7 +28,7 @@ class TicketAdapter :
                 badge.visibility = View.VISIBLE
                 badge.text = ticket.badge
             }
-            price.text = ticket.price.toString()
+            price.text = ticket.price
             departureTime.text = ticket.departureTime
             arrivalTime.text = ticket.arrivalTime
             travelTime.text = ticket.duration

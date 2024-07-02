@@ -42,9 +42,11 @@ class AllTicketsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val items = viewModel.allTicketsLiveData.value
         adapter = TicketAdapter()
         binding.rvAllTicketsList.adapter = adapter
+
+        val spacingInPixels = resources.getDimensionPixelSize(R.dimen.ticket_item_spacing)
+        binding.rvAllTicketsList.addItemDecoration(TicketItemDecoration(spacingInPixels))
 
         viewModel.allTicketsLiveData.observe(viewLifecycleOwner, Observer { items ->
             adapter.submitList(items)

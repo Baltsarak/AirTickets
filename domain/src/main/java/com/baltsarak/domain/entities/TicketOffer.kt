@@ -4,5 +4,5 @@ data class TicketOffer(
     val id: Int,
     val title: String,
     val timeRange: String,
-    val price: Int
+    val price: String
 )
