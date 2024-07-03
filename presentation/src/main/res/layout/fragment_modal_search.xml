@@ -98,142 +98,163 @@
 
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/iv_difficult_route"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_corners_background_8"
-        android:backgroundTint="@color/green"
+        android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@id/iv_anywhere"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_view">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
-            android:src="@drawable/route" />
+            android:background="@drawable/rounded_corners_background_8"
+            android:backgroundTint="@color/green">
 
-    </FrameLayout>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/route" />
 
-    <TextView
-        android:id="@+id/tv_difficult_route"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:gravity="center"
-        android:text="@string/difficult_route"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@id/iv_difficult_route"
-        app:layout_constraintStart_toStartOf="@id/iv_difficult_route"
-        app:layout_constraintTop_toBottomOf="@id/iv_difficult_route" />
+        </FrameLayout>
 
-    <FrameLayout
+        <TextView
+            android:id="@+id/tv_difficult_route"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center"
+            android:text="@string/difficult_route"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/iv_anywhere"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/rounded_corners_background_8"
-        android:backgroundTint="@color/blue"
-        app:layout_constraintBottom_toBottomOf="@id/iv_difficult_route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@id/iv_weekend"
         app:layout_constraintStart_toEndOf="@id/iv_difficult_route"
         app:layout_constraintTop_toTopOf="@id/iv_difficult_route">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
-            android:background="@color/blue"
-            android:backgroundTint="@color/blue"
-            android:src="@drawable/defaultball" />
+            android:background="@drawable/rounded_corners_background_8"
+            android:backgroundTint="@color/blue">
 
-    </FrameLayout>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:background="@color/blue"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/defaultball" />
 
-    <TextView
-        android:id="@+id/tv_anywhere"
-        android:layout_width="79dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:gravity="center"
-        android:text="@string/anywhere"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@id/iv_anywhere"
-        app:layout_constraintStart_toStartOf="@id/iv_anywhere"
-        app:layout_constraintTop_toBottomOf="@id/iv_anywhere" />
+        </FrameLayout>
 
-    <FrameLayout
+        <TextView
+            android:id="@+id/tv_anywhere"
+            android:layout_width="79dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center"
+            android:text="@string/anywhere"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/iv_weekend"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/rounded_corners_background_8"
-        android:backgroundTint="@color/dark_blue"
-        app:layout_constraintBottom_toBottomOf="@id/iv_anywhere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@id/iv_hot_tickets"
         app:layout_constraintStart_toEndOf="@id/iv_anywhere"
         app:layout_constraintTop_toTopOf="@id/iv_anywhere">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
-            android:src="@drawable/calendar" />
+            android:background="@drawable/rounded_corners_background_8"
+            android:backgroundTint="@color/dark_blue">
 
-    </FrameLayout>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/calendar" />
 
-    <TextView
-        android:id="@+id/tv_weekend"
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_weekend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center"
+            android:text="@string/weekend"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/iv_hot_tickets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:gravity="center"
-        android:text="@string/weekend"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@id/iv_weekend"
-        app:layout_constraintStart_toStartOf="@id/iv_weekend"
-        app:layout_constraintTop_toBottomOf="@id/iv_weekend" />
-
-    <FrameLayout
-        android:id="@+id/iv_hot_tickets"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
         android:layout_marginEnd="27dp"
-        android:background="@drawable/rounded_corners_background_8"
-        android:backgroundTint="@color/orange"
-        app:layout_constraintBottom_toBottomOf="@id/iv_weekend"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_weekend"
         app:layout_constraintTop_toTopOf="@id/iv_weekend">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
-            android:src="@drawable/flame" />
+            android:background="@drawable/rounded_corners_background_8"
+            android:backgroundTint="@color/orange">
 
-    </FrameLayout>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/flame" />
 
-    <TextView
-        android:id="@+id/tv_hot_tickets"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:gravity="center"
-        android:text="@string/hot_tickets"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@id/iv_hot_tickets"
-        app:layout_constraintStart_toStartOf="@id/iv_hot_tickets"
-        app:layout_constraintTop_toBottomOf="@id/iv_hot_tickets" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_hot_tickets"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:gravity="center"
+            android:text="@string/hot_tickets"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

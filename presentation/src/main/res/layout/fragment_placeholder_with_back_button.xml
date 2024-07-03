@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/sf_pro_display_semibold"
         android:text="@string/placeholder"
-        android:textColor="@color/grey5"
+        android:textColor="@color/grey6"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_back"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,14 +36,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp"
-            android:text="@string/back2"
             android:layout_gravity="center"
+            android:fontFamily="@font/sf_pro_display_medium"
             android:gravity="center"
-            android:textSize="22sp"
-            android:fontFamily="@font/sf_pro_display_semibold"
-            android:textColor="@color/black"
-            />
+            android:padding="8dp"
+            android:text="@string/back2"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
     </FrameLayout>
 

@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import com.baltsarak.presentation.adapter.TicketAdapter
 import com.baltsarak.presentation.databinding.FragmentAllTicketsBinding
 import com.baltsarak.presentation.di.ViewModelFactory
+import com.baltsarak.presentation.utils.TicketItemDecoration
 import com.baltsarak.presentation.viewModels.AllTicketsViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
@@ -44,8 +45,15 @@ class AllTicketsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.let {
-            binding.tvFrom.text = it.getString(ARG_FROM_CITY)
-            binding.tvTo.text = it.getString(ARG_TO_CITY)
+            val fromCity = it.getString(ARG_FROM_CITY)
+            val toCity = it.getString(ARG_TO_CITY)
+            if (fromCity.isNullOrBlank() || toCity.isNullOrBlank()) {
+                binding.slash.visibility = View.GONE
+            } else {
+                binding.slash.visibility = View.VISIBLE
+            }
+            binding.tvFrom.text = fromCity
+            binding.tvTo.text = toCity
             binding.tvSearchData.text = it.getString(ARG_DATE)
             binding.tvNumberOfPassengers.text = it.getString(ARG_PASSENGERS)
         }
@@ -71,7 +79,12 @@ class AllTicketsFragment : Fragment() {
         private const val ARG_DATE = "date"
         private const val ARG_PASSENGERS = "passengers"
 
-        fun newInstance(fromCity: String, toCity: String, date: String, passengers: String): AllTicketsFragment {
+        fun newInstance(
+            fromCity: String,
+            toCity: String,
+            date: String,
+            passengers: String
+        ): AllTicketsFragment {
             val fragment = AllTicketsFragment()
             val args = Bundle().apply {
                 putString(ARG_FROM_CITY, fromCity)

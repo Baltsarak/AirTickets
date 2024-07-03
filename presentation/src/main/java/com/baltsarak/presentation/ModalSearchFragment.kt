@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.view.inputmethod.EditorInfo
 import com.baltsarak.presentation.databinding.FragmentModalSearchBinding
+import com.baltsarak.presentation.utils.CyrillicInputFilter
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -36,6 +38,10 @@ class ModalSearchFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         settingBottomSheetHeight(view)
+        val bottomSheet =
+            dialog?.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+        bottomSheet?.startAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_up))
+
 
         binding.etFrom.filters = arrayOf(CyrillicInputFilter())
         binding.etTo.filters = arrayOf(CyrillicInputFilter())

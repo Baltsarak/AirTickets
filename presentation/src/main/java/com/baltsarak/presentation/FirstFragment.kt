@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import com.baltsarak.presentation.adapter.MusicAdapter
 import com.baltsarak.presentation.databinding.FragmentFirstBinding
 import com.baltsarak.presentation.di.ViewModelFactory
+import com.baltsarak.presentation.utils.CyrillicInputFilter
+import com.baltsarak.presentation.utils.MusicItemDecoration
 import com.baltsarak.presentation.viewModels.FirstScreenViewModel
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
@@ -62,7 +64,10 @@ class FirstFragment : Fragment() {
 
         binding.etTo.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
-                val from = binding.etFrom.text.toString()
+                var from = binding.etFrom.text.toString()
+                if (from.isNotEmpty()) {
+                    from = from[0].uppercaseChar() + from.substring(1)
+                }
                 viewModel.saveTextInCache(from)
                 val bottomSheetFragment = ModalSearchFragment.newInstance(from)
                 bottomSheetFragment.show(

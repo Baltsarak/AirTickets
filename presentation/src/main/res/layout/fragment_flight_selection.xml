@@ -104,7 +104,9 @@
         android:layout_height="33dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="13dp"
-        android:fillViewport="true">
+        android:fadingEdge="none"
+        android:fillViewport="true"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -161,8 +163,8 @@
                     android:id="@+id/tv_day_of_week"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10.5dp"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="10.5dp"
                     android:fontFamily="@font/sf_pro_display_medium"
                     android:text="@string/day_of_week"
                     android:textColor="@color/grey6"
@@ -319,9 +321,9 @@
                 android:text="@string/flight_times"
                 android:textColor="@color/white"
                 android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tv_price"
                 app:layout_constraintStart_toStartOf="@id/tv_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_name"
-                app:layout_constraintEnd_toEndOf="@id/tv_price"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -400,9 +402,9 @@
                 android:text="@string/flight_times"
                 android:textColor="@color/white"
                 android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tv_price2"
                 app:layout_constraintStart_toStartOf="@id/tv_name2"
-                app:layout_constraintTop_toBottomOf="@id/tv_name2"
-                app:layout_constraintEnd_toEndOf="@id/tv_price2"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_name2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -481,9 +483,9 @@
                 android:text="@string/flight_times"
                 android:textColor="@color/white"
                 android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tv_price3"
                 app:layout_constraintStart_toStartOf="@id/tv_name3"
-                app:layout_constraintTop_toBottomOf="@id/tv_name3"
-                app:layout_constraintEnd_toEndOf="@id/tv_price3"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_name3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
