@@ -86,6 +86,7 @@
                 android:textSize="16sp" />
 
             <ImageView
+                android:id="@+id/clear"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="18dp"
@@ -247,6 +248,7 @@
         app:layout_constraintTop_toBottomOf="@id/search_view">
 
         <LinearLayout
+            android:id="@+id/istanbul"
             android:layout_width="296dp"
             android:layout_height="56dp"
             android:layout_gravity="center"
@@ -298,6 +300,7 @@
             android:background="@color/grey5" />
 
         <LinearLayout
+            android:id="@+id/sochi"
             android:layout_width="296dp"
             android:layout_height="56dp"
             android:layout_gravity="center"
@@ -348,6 +351,7 @@
             android:background="@color/grey5" />
 
         <LinearLayout
+            android:id="@+id/phuket"
             android:layout_width="296dp"
             android:layout_height="56dp"
             android:layout_gravity="center"
@@ -398,6 +402,5 @@
             android:background="@color/grey5" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,17 +33,41 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/tv_from_to"
+            android:id="@+id/tv_from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
-            android:text="@string/from_to"
+            android:text="@string/moskow"
             android:fontFamily="@font/sf_pro_display_semibold"
             android:textSize="16sp"
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@id/bottom_back"
             app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/splash"
+            android:fontFamily="@font/sf_pro_display_semibold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/tv_from"
+            app:layout_constraintTop_toTopOf="@id/tv_from"
+            app:layout_constraintBottom_toBottomOf="@id/tv_from"/>
+
+        <TextView
+            android:id="@+id/tv_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sochi"
+            android:fontFamily="@font/sf_pro_display_semibold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/slash"
+            app:layout_constraintTop_toTopOf="@id/slash"
+            app:layout_constraintBottom_toBottomOf="@id/slash"/>
 
         <TextView
             android:id="@+id/tv_search_data"
@@ -56,7 +80,20 @@
             android:textColor="@color/grey6"
             android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@id/bottom_back"
-            app:layout_constraintTop_toBottomOf="@id/tv_from_to"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_from"/>
+
+        <TextView
+            android:id="@+id/tv_number_of_passengers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_passengers"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:textSize="14sp"
+            android:textColor="@color/grey6"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@id/tv_search_data"
+            app:layout_constraintTop_toTopOf="@id/tv_search_data"
+            app:layout_constraintBottom_toBottomOf="@id/tv_search_data"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

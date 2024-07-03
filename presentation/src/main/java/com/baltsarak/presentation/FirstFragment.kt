@@ -1,9 +1,11 @@
 package com.baltsarak.presentation
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.baltsarak.presentation.adapter.MusicAdapter
@@ -57,11 +59,12 @@ class FirstFragment : Fragment() {
         })
 
         binding.rvMusic.adapter = adapter
+
         binding.etTo.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 val from = binding.etFrom.text.toString()
                 viewModel.saveTextInCache(from)
-                val bottomSheetFragment = ModalSearchFragment()
+                val bottomSheetFragment = ModalSearchFragment.newInstance(from)
                 bottomSheetFragment.show(
                     requireActivity().supportFragmentManager,
                     bottomSheetFragment.tag
@@ -69,8 +72,31 @@ class FirstFragment : Fragment() {
             }
         }
 
+        binding.etTo.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE
+                || actionId == EditorInfo.IME_ACTION_GO
+                || event?.keyCode == KeyEvent.KEYCODE_ENTER) {
+                goToTickets()
+                true
+            } else {
+                false
+            }
+        }
+
         binding.etFrom.filters = arrayOf(CyrillicInputFilter())
         binding.etTo.filters = arrayOf(CyrillicInputFilter())
+    }
+
+    private fun goToTickets() {
+        val fromCity = binding.etFrom.text.toString()
+        val toCity = binding.etTo.text.toString()
+        val flightSelectionFragment = FlightSelectionFragment.newInstance(fromCity, toCity)
+
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .addToBackStack(null)
+            .replace(R.id.main_screen_fragment_container, flightSelectionFragment)
+            .commit()
     }
 }
 

@@ -42,6 +42,14 @@ class AllTicketsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        arguments?.let {
+            binding.tvFrom.text = it.getString(ARG_FROM_CITY)
+            binding.tvTo.text = it.getString(ARG_TO_CITY)
+            binding.tvSearchData.text = it.getString(ARG_DATE)
+            binding.tvNumberOfPassengers.text = it.getString(ARG_PASSENGERS)
+        }
+
         adapter = TicketAdapter()
         binding.rvAllTicketsList.adapter = adapter
 
@@ -51,5 +59,28 @@ class AllTicketsFragment : Fragment() {
         viewModel.allTicketsLiveData.observe(viewLifecycleOwner, Observer { items ->
             adapter.submitList(items)
         })
+
+        binding.bottomBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+    }
+
+    companion object {
+        private const val ARG_FROM_CITY = "from_city"
+        private const val ARG_TO_CITY = "to_city"
+        private const val ARG_DATE = "date"
+        private const val ARG_PASSENGERS = "passengers"
+
+        fun newInstance(fromCity: String, toCity: String, date: String, passengers: String): AllTicketsFragment {
+            val fragment = AllTicketsFragment()
+            val args = Bundle().apply {
+                putString(ARG_FROM_CITY, fromCity)
+                putString(ARG_TO_CITY, toCity)
+                putString(ARG_DATE, date)
+                putString(ARG_PASSENGERS, passengers)
+            }
+            fragment.arguments = args
+            return fragment
+        }
     }
 }

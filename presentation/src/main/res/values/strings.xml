@@ -37,9 +37,9 @@
     <string name="nordstar">NordStar</string>
     <string name="view_all_tickets">Посмотреть все билеты</string>
     <string name="bottom_back">bottom back</string>
-    <string name="from_to">Москва-Сочи</string>
-    <string name="search_data">23 февраля, 1 пассажир</string>
-    <string name="date">24 июн, сб</string>
+    <string name="moskow">Москва</string>
+    <string name="search_data">23 февраля</string>
+    <string name="date">24 июн</string>
     <string name="filter">Фильтр</string>
     <string name="price_chart">График цен</string>
     <string name="badge_text">Самый удобный</string>
@@ -48,7 +48,13 @@
     <string name="transfers_info">/ Без пересадок</string>
     <string name="travel_time">4ч в пути</string>
     <string name="_07_10">07:10</string>
-    <string name="slash">—</string>
+    <string name="dash">—</string>
+    <string name="splash">-</string>
     <string name="_03_15">03:15</string>
+    <string name="previous_screen">previous screen</string>
+    <string name="day_of_week">, сб</string>
+    <string name="number_of_passengers">, 1 пассажир</string>
+    <string name="placeholder">placeholder</string>
+    <string name="back2">Назад</string>
 
 </resources>
